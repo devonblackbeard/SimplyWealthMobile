@@ -1,14 +1,12 @@
+import 'package:SimplyWealthMobile/Home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
 
 void main() {
-  runApp(Home());
+  runApp(Login());
 }
 
-class Home extends StatelessWidget {
+class Login extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -21,15 +19,15 @@ class Home extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Simply Wealth'),
+      home: MyLoginPage(title: 'Simply Wealth'),
     );
   }
 
-  _MyHomePageState createState() => _MyHomePageState();
+//_MyHomePageState createState() => _MyHomePageState();
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class MyLoginPage extends StatefulWidget {
+  MyLoginPage({Key key, this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -41,10 +39,10 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MyLoginPageState createState() => _MyLoginPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyLoginPageState extends State<MyLoginPage> {
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0); //
 //  List albumData;
 //  String apiPath =
@@ -71,7 +69,16 @@ class _MyHomePageState extends State<MyHomePage> {
 //            )),
 //      ),
 //    );
-    final LoginNote = Text("Login");
+    final LoginNote = Padding(
+        padding: EdgeInsets.all(55),
+        child: Text(
+          "Login",
+          style: TextStyle(
+              color: Colors.white,
+              backgroundColor: null,
+              fontSize: 34,
+              fontFamily: "Raleway-Thin"),
+        ));
 
     final emailField = TextField(
       obscureText: false,
@@ -101,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Home()),
+            MaterialPageRoute(builder: (context) => HomePage()),
           );
         },
         child: Text("Login",
@@ -113,12 +120,12 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: Center(
         child: Container(
-          color: Colors.lightGreen,
+          color: Colors.lightBlueAccent,
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
 //                SizedBox(
 //                  height: 0.0,

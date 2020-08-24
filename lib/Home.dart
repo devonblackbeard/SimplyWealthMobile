@@ -4,10 +4,10 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 void main() {
-  runApp(LoginPage());
+  runApp(HomePage());
 }
 
-class LoginPage extends StatelessWidget {
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,13 +19,13 @@ class LoginPage extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyLoginPage(title: 'Simply Wealth'),
+      home: MyHomePage(title: 'Simply Wealth'),
     );
   }
 }
 
-class MyLoginPage extends StatefulWidget {
-  MyLoginPage({Key key, this.title}) : super(key: key);
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -41,7 +41,7 @@ class MyLoginPage extends StatefulWidget {
 }
 //TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
 
-class _MyHomePageState extends State<MyLoginPage> {
+class _MyHomePageState extends State<MyHomePage> {
   List albumData;
   String apiPath =
       "https://labaq8qdia.execute-api.us-east-1.amazonaws.com/default/GetDataForTrading?id=1";
@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyLoginPage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Text(albumData[0].toString()),
+      body: Text("Home page"),
     );
   }
 }
